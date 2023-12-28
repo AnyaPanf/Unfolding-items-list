@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { NestedCategoriesSelector } from "./components/NestedCategoriesSelector";
+import { data } from "./Data";
+
 
 function App() {
+  const [selectedIds, setSelectedIds] = useState([12669, 12723]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <NestedCategoriesSelector data={data} />
+      <div>
+        <h3>Все выбранные категории</h3>
+        <ul>
+          {selectedIds.map(id => (
+            <li>{id} {data.find(obj => obj.id === id).name}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
