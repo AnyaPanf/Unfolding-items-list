@@ -1,18 +1,30 @@
 import { useState } from "react"
 import { MenuSubItem } from "./MenuSubItem"
 import { getTopIds } from "./getTopIds"
-export const NestedCategoriesSelector = ({ data }) => {
-    const [isChecked, setIsChecked] = useState(false)
+import { getSubCatIds } from "./getSubCatIds"
 
-    const topLevelItems = getTopIds(data)
-    console.log(topLevelItems);
+export const NestedCategoriesSelector = ({ data, selectedIds, setSelectedIds }) => {
+    const categoriesDict = getSubCatIds(data)
+    const topLevelIds = getTopIds(data)
+    console.log(categoriesDict);
 
-    const handleClick = (e) => {
-        setIsChecked(!isChecked)
+    const toggleId = (productId) => {
+        console.log(categoriesDict[productId].children);
+        if (selectedIds.includes(productId)) {
+            setSelectedIds(prev => prev.filter((id) => id !== productId))
+        } else if (categoriesDict[productId].children !== undefined) {
+            setSelectedIds(prev => [...prev, productId, categoriesDict[productId].children])
+        } else {
+            setSelectedIds(prev => [...prev, productId])
+        }
+        // setSelectedIds(prev => selectedIds.includes(productId) 
+        // ? prev.filter((id) => id !== productId) 
+        // : [...prev, productId])
+        // categoriesDict.productId.children ? [...prev, categoriesDict.productId.children]
     }
 
     return (
-        <MenuSubItem data={data} topLevelItems={topLevelItems}/>
+        <MenuSubItem ids={topLevelIds} id2category={categoriesDict} selectedIds={selectedIds} toggleId={toggleId} />
     )
 }
 

@@ -1,9 +1,4 @@
 
-
 export const getTopIds = (data) => {
-    return  data.filter((item) => {
-        return item.parentId === undefined
-    })
-
-
+    return data.filter((subItem) => subItem.parentId === undefined).map((item) => String(item.id))
 }

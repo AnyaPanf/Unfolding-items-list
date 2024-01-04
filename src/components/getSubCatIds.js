@@ -1,21 +1,18 @@
 
-
 export const getSubCatIds = (data) => {
     const id2product = {}
-    for (const {id, ...product} of data) {
+    for (const { id, ...product } of data) {
         id2product[id] = {
             ...product,
             children: [],
         };
     }
-    // Object.fromEntries
 
     for (const { id, parentId } of data) {
         if (parentId !== undefined) {
             id2product[parentId].children.push(String(id))
         }
     }
-
     return id2product
 }
 
