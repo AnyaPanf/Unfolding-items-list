@@ -1,9 +1,10 @@
 
 export const getSubCatIds = (data) => {
     const id2product = {}
-    for (const { id, ...product } of data) {
+    for (const { id, parentId, ...product } of data) {
         id2product[id] = {
             ...product,
+            parentId: String(parentId),
             children: [],
         };
     }

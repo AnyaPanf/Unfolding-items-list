@@ -2,6 +2,24 @@ import { useState } from "react"
 import { MenuSubItem } from "./MenuSubItem"
 import { getTopIds } from "./getTopIds"
 import { getSubCatIds } from "./getSubCatIds"
+import { getDescendants } from "../getDescendants"
+
+// getDescendants(id, categoriesDict)
+// getAncestors()
+
+
+// react testing library
+
+//  тестируем NestedCategoriesSelector
+//  придумать пример data
+//  A
+//    - B
+//    - C
+//  D
+
+// 1. изначально рисуется 2 чекбокса
+// 2. кликаете на кнопку
+// 3. рисуется 4 чекбокса
 
 export const NestedCategoriesSelector = ({ data, selectedIds, setSelectedIds }) => {
     const categoriesDict = getSubCatIds(data)
@@ -9,17 +27,20 @@ export const NestedCategoriesSelector = ({ data, selectedIds, setSelectedIds }) 
     console.log(categoriesDict);
 
     const toggleId = (productId) => {
-        console.log(categoriesDict[productId].children);
+        const descendants = getDescendants(productId, categoriesDict)
+        // getAncestors
         if (selectedIds.includes(productId)) {
-            setSelectedIds(prev => prev.filter((id) => id !== productId))
-        } else if (categoriesDict[productId].children !== undefined) {
-            setSelectedIds(prev => [...prev, productId, categoriesDict[productId].children])
+            setSelectedIds(selectedIds.filter((id) => {
+                return id !== productId 
+            } ))
+
         } else {
-            setSelectedIds(prev => [...prev, productId])
+            setSelectedIds(Array.from(new Set([...selectedIds, productId, ...descendants])))
         }
-        // setSelectedIds(prev => selectedIds.includes(productId) 
-        // ? prev.filter((id) => id !== productId) 
-        // : [...prev, productId])
+
+        // setSelectedIds(selectedIds.includes(productId)
+        //     ? selectedIds.filter((id) => id !== productId)
+        //     : [...prev, productId])
         // categoriesDict.productId.children ? [...prev, categoriesDict.productId.children]
     }
 

@@ -12,7 +12,7 @@ function App() {
       <div>
         <h3>Все выбранные категории</h3>
         <ul>
-          {selectedIds.flatMap(id => (
+          {selectedIds.map(id => (
             <li>{id} {data.find(obj => obj.id === +id).name}</li>
           ))}
         </ul>
