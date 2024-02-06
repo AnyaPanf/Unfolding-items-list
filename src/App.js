@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NestedCategoriesSelector } from "./components/NestedCategoriesSelector";
-import { data } from "./Data";
-
+import { data } from "./domain/Data";
 
 function App() {
   const [selectedIds, setSelectedIds] = useState([]);
@@ -9,11 +8,11 @@ function App() {
   return (
     <div className="container">
       <NestedCategoriesSelector data={data} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
-      <div>
+      <div className="selected">
         <h3>Все выбранные категории</h3>
-        <ul>
+        <ul className="selected__list">
           {selectedIds.map(id => (
-            <li>{id} {data.find(obj => obj.id === +id).name}</li>
+            <li>{data.find(obj => obj.id === +id).name}</li>
           ))}
         </ul>
       </div>

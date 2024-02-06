@@ -1,2 +1,0 @@
-import { getAncestors } from "./getAncestors";
-

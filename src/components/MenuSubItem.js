@@ -4,8 +4,6 @@ import { useState } from "react"
 export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
     const [unfold, setUnfold] = useState([])
 
-    
-
     const handleClick = (productId) => {
         setUnfold(prev => prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId])
     }
@@ -18,12 +16,12 @@ export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
                 return (
                     <li className="menu__item">
                         {children.length > 0 && (
-                            <img src={arrow} className="menu__arrow" onClick={() => handleClick(id)} />
+                            <button onClick={() => handleClick(id)}><img src={arrow} className={unfold.includes(id) ? "menu__arrow-turned" : "menu__arrow"} /></button>
                         )}
                         <input type="checkbox" id={id} checked={selectedIds.includes(id)} onChange={() => toggleId(id)}></input>
                         <label for={id} className="menu__text">{name}</label>
                         {children.length > 0 && unfold.includes(id) && (
-                            <MenuSubItem ids={children} id2category={id2category}  selectedIds={selectedIds}  toggleId={ toggleId}/>
+                            <MenuSubItem ids={children} id2category={id2category} selectedIds={selectedIds} toggleId={toggleId} />
                         )}
                     </li>
                 )
