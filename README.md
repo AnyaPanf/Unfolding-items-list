@@ -1,7 +1,6 @@
-# Mortgage calculator
+# Unfolding Items List
 
-Mortgage calculator with the option of selecting loan term, down payment, bank, property type and housing type.
-Created to practice building of controlled components.
+An unfolding list of items for a marketplace using recursion. 
 
 ## Technologies
 - HTML
