@@ -1,6 +1,7 @@
-# Unfoldind Items List
+# Mortgage calculator
 
-An unfolding list of items for a marketplace. Can be infinite due to recursion.
+Mortgage calculator with the option of selecting loan term, down payment, bank, property type and housing type.
+Created to practice building of controlled components.
 
 ## Technologies
 - HTML
