@@ -1,6 +1,13 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(254,234,246);
+  background: linear-gradient(180deg, rgba(254,234,246,1) 0%, rgba(254,234,246,1) 67%, rgba(251,216,238,1) 85%);
 }
 
 li {
@@ -10,49 +17,4 @@ li {
 button {
   border: none;
   background-color: transparent;
-}
-
-.container {
-  width: 1230px;
-  margin: 10px auto;
-  padding: 0 15px;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  gap: 50px;
-}
-
-.selected h3 {
-  text-align: center;
-  font-size: 18px;
-  color: #0099f7;
-}
-
-.selected__list {
-  display: flex;
-  flex-wrap: wrap;
-
-}
-
-.selected__list li {
-  background-color: rgb(232, 235, 235);
-  border-radius: 20px;
-  padding: 5px;
-  margin: 5px 5px 0 0;
-  font-size: 13px;
-}
-
-.menu__arrow {
-  width: 20px;
-}
-
-.menu__arrow-turned {
-  width: 20px;
-  transform: rotate(90deg);
-}
-
-.menu__text,
-.submenu__text {
-  font-size: 15px;
-  color: #0099f7;
-  margin-left: 5px;
 }

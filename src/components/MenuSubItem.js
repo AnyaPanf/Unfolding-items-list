@@ -1,5 +1,6 @@
-import arrow from "./arrow.png"
+import arrow from "./arrow.svg"
 import { useState } from "react"
+import MenuSubitemCss from './MenuSubItem.module.css'
 
 export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
     const [unfold, setUnfold] = useState([])
@@ -9,17 +10,24 @@ export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
     }
 
     return (
-        <ul className="menu">
+        <ul className={MenuSubitemCss.menu}>
             {ids.map((id) => {
                 const { children, name } = id2category[id]
 
                 return (
-                    <li className="menu__item">
+                    <li className={MenuSubitemCss.menuItem}>
                         {children.length > 0 && (
-                            <button onClick={() => handleClick(id)}><img src={arrow} className={unfold.includes(id) ? "menu__arrow-turned" : "menu__arrow"} /></button>
-                        )}
-                        <input type="checkbox" id={id} checked={selectedIds.includes(id)} onChange={() => toggleId(id)}></input>
-                        <label for={id} className="menu__text">{name}</label>
+                            <div className={MenuSubitemCss.line}>
+                                <button className={MenuSubitemCss.btn}
+                                    onClick={() => handleClick(id)}>
+                                    <img src={arrow}
+                                        className={unfold.includes(id)
+                                            ? `${MenuSubitemCss.menuArrowTurned} ${MenuSubitemCss.selected}`
+                                            : `${MenuSubitemCss.menuArrow}`} />
+                                </button>
+                                <input type="checkbox" id={id} checked={selectedIds.includes(id)} onChange={() => toggleId(id)}></input>
+                                <label for={id} className={MenuSubitemCss.menuText}>{name}</label>
+                            </div>)}
                         {children.length > 0 && unfold.includes(id) && (
                             <MenuSubItem ids={children} id2category={id2category} selectedIds={selectedIds} toggleId={toggleId} />
                         )}
@@ -28,4 +36,4 @@ export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
             })}
         </ul>
     )
-}
+};

@@ -1,4 +1,3 @@
-
 export const getSubCatIds = (data) => {
     const id2product = {}
     for (const { id, parentId, ...product } of data) {
@@ -10,9 +9,10 @@ export const getSubCatIds = (data) => {
     }
 
     for (const { id, parentId } of data) {
-        if (parentId !== undefined) {
+        if (parentId !== undefined && id2product[parentId]) {
             id2product[parentId].children.push(String(id))
         }
     }
+
     return id2product
-}
+};

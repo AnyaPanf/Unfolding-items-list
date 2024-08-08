@@ -27,5 +27,4 @@ export const NestedCategoriesSelector = ({ data, selectedIds, setSelectedIds }) 
     return (
         <MenuSubItem ids={topLevelIds} id2category={categoriesDict} selectedIds={selectedIds} toggleId={toggleId} />
     )
-}
-
+};
