@@ -1,0 +1,35 @@
+[33mcommit 66e3d876d900e9ff8bce66c8121b5588092a9dff[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Wed Aug 7 14:13:30 2024 +0600
+
+    Data.js updated
+
+[33mcommit 2f1e0c717ef6bd6f48e54c4df9370b59e13e2e58[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Tue Feb 6 17:29:34 2024 +0600
+
+    buttons fixed. Final version
+
+[33mcommit 89c8c7f26a6b1868a36c292b87ba03ccc861e1c2[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Sat Jan 6 18:21:36 2024 +0600
+
+    getDescendants added
+
+[33mcommit 32aa742bfbf0277d524c9e8a4c72746a0aa263ac[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Thu Jan 4 13:48:06 2024 +0600
+
+    unfoding items added
+
+[33mcommit 17afea852114b11863453375dabdba85bc99d1e4[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Thu Dec 28 12:57:33 2023 +0600
+
+    first commit
+
+[33mcommit 98183a7e1e91c9700db1d3d9b5d43b6036ad542c[m
+Author: Anna Panferova <anyapanf@gmail.com>
+Date:   Thu Nov 30 14:14:10 2023 +0600
+
+    Initialize project using Create React App
