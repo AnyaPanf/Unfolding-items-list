@@ -4,9 +4,9 @@ An unfolding list of items for a marketplace using recursion.
 
 ## Technologies
 - HTML
-- CSS
+- CSS Modules
 - JavaScript
-- React hooks
+- React hooks (useState)
 - Jest
 
 ## Available Scripts
