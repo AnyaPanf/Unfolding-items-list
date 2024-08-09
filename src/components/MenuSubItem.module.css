@@ -1,54 +1,62 @@
 .menu {
-    margin: 10px 10px;
+  margin: 10px 10px;
 }
 
 .menuItem {
-    margin-left: 20px;
-    margin-bottom: 3px;
+  margin-left: 20px;
+  margin-bottom: 3px;
 }
 
 .menuArrow {
-    width: 20px;
+  width: 20px;
+  transition: 0.5s;
 }
 
 .menuArrowTurned {
-    width: 20px;
-    transform: rotate(90deg);
+  width: 20px;
+  transform: rotate(90deg);
+  transition: 0.5s;
+}
+
+.hidden {
+  width: 20px;
+  visibility: hidden;
 }
 
 .menuText {
-    font-size: 15px;
-    color: #3954bc;
-    margin-left: 5px;
+  font-size: 15px;
+  color: #3954bc;
+  margin-left: 5px;
 }
 
 .line {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
 }
 
 ul {
-    list-style-type: none;
-    padding-left: 20px;
-  }
-  
-  ul ul {
-    margin-left: 20px;
-    padding-left: 0;
-  }
-  
-  li {
-    position: relative;
-    padding-left: 20px;
-    line-height: 1.5em;
-  }
+  list-style-type: none;
+  padding-left: 20px;
+}
 
-  ul ul ul {
-    margin-left: 20px;
-    padding-left: 0;
-  }
-  
-  ul ul ul ul {
-    margin-left: 20px;
-    padding-left: 0;
-  }
+ul ul {
+  margin-left: 20px;
+}
+
+ul ul ul {
+  margin-left: 20px;
+}
+
+ul ul ul ul {
+  margin-left: 20px;
+}
+
+ul ul ul ul ul {
+  margin-left: 20px;
+}
+
+li {
+  padding-left: 20px;
+  line-height: 20px;
+}
