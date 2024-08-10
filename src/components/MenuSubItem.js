@@ -1,7 +1,6 @@
 import arrow from "./arrow.svg";
 import { useState } from "react";
 import MenuSubitemCss from './MenuSubItem.module.css';
-import 'animate.css';
 
 export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
     const [unfold, setUnfold] = useState([]);
