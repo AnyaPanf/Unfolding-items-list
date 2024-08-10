@@ -8,6 +8,7 @@ function App() {
 
   return (
     <div className={AppCss.container}>
+      <h3>Выберите категории:</h3>
       <NestedCategoriesSelector data={data} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
       {/* <div className={AppCss.selected}>
         <h3>Все выбранные категории</h3>

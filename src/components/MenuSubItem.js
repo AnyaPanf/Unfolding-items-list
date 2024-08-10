@@ -1,9 +1,11 @@
-import arrow from "./arrow.svg"
-import { useState } from "react"
-import MenuSubitemCss from './MenuSubItem.module.css'
+import arrow from "./arrow.svg";
+import { useState } from "react";
+import MenuSubitemCss from './MenuSubItem.module.css';
+import 'animate.css';
 
 export const MenuSubItem = ({ ids, id2category, selectedIds, toggleId }) => {
     const [unfold, setUnfold] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = (productId) => {
         setUnfold(prev => prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]);

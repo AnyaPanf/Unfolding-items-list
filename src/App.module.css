@@ -1,40 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .container {
-    width: 1000px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 20px;
-    background-image: url('bcgImg.png');
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    min-height: 100vh;
-  }
-  
-  .selected h3 {
-    text-align: center;
-    font-size: 18px;
-    color: #4c63ce;
-  }
-  
-  .selectedList {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .selectedList li {
-    background-color: rgb(232, 235, 235);
-    border-radius: 20px;
-    padding: 5px;
-    margin: 5px 5px 0 0;
-    font-size: 13px;
-  }
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-image: url('bcgImg.png');
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  min-height: 100vh;
+}
 
-  .topItems {
-    font-size: 20px;
-    color: #3954bc;
-    font-weight: 800;
-  }
+h3 {
+  font-size: 18px;
+  color: #4c63ce;
+  padding: 10px 0 15px 50px;
+}
+
+.selectedList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selectedList li {
+  background-color: rgb(232, 235, 235);
+  border-radius: 20px;
+  padding: 5px;
+  margin: 5px 5px 0 0;
+  font-size: 13px;
+}
+
+.topItems {
+  font-size: 20px;
+  color: #3954bc;
+  font-weight: 800;
+}

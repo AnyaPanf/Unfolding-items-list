@@ -5,6 +5,17 @@
 .menuItem {
   margin-left: 20px;
   margin-bottom: 3px;
+  animation: openMenu 0.5s ease-in forwards;
+}
+
+@keyframes openMenu {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
 }
 
 .menuArrow {
